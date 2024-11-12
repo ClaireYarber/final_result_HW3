@@ -1,10 +1,10 @@
 <?php
 require_once("util-db.php");
-require_once("model-authors-with-books.php");
+require_once("model-pages.php");
 
-$pageTitle= "Authors With Books";
+$pageTitle= "Pages";
 include "view-header.php";
-$authors-with-books = selectAuthorWithBooks();
-include "view-authors-with-books.php";
+$pages = selectPages();
+include "view-pages.php";
 include "view-footer.php";
 ?>
