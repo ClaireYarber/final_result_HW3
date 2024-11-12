@@ -4,8 +4,6 @@
     <thead>
       <tr>
       <th>ID</th>
-      <th>ID</th>
-      <th>ID</th>
       <th>Year</th>
       <th>Month</th>
       <th>Day</th>
@@ -17,8 +15,6 @@ while ($page = $pages->fetch_assoc()) {
 ?>
   <tr>
     <td><?php echo $page['page_id']; ?></td>
-    <td><?php echo $page['author_id']; ?></td>
-    <td><?php echo $page['book_id']; ?></td>
     <td><?php echo $page['year']; ?></td>
     <td><?php echo $page['month']; ?></td>
     <td><?php echo $page['day']; ?></td>
