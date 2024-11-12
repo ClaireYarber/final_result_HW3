@@ -26,6 +26,8 @@
           <a class="nav-link" href="books.php">Books</a>
         </li><li class="nav-item">
           <a class="nav-link" href="pages.php">Pages</a>
+           </li><li class="nav-item">
+          <a class="nav-link" href="Chapters.php">Chapters</a>
         </li> 
       </ul>     
     </div>
