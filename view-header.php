@@ -25,9 +25,9 @@
      <li class="nav-item">
           <a class="nav-link" href="books.php">Books</a>
         </li><li class="nav-item">
-          <a class="nav-link" href="pages.php">Pages</a>
+          <a class="nav-link" href="chapters.php">Chapters</a>
            </li><li class="nav-item">
-          <a class="nav-link" href="Chapters.php">Chapters</a>
+          <a class="nav-link" href="pages.php">Pages</a>
         </li> 
       </ul>     
     </div>
