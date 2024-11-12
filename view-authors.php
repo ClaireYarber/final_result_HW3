@@ -15,7 +15,7 @@ while ($author = $authors->fetch_assoc()) {
 ?>
   <tr>
     <td><?php echo $author['author_id']; ?></td>
-    <td><?php echo $author['author_name']; ?></td>
+    <td><a href="books.php?author_id=<?php echo $author['author_id']; ?>"><?php echo $author['author_name']; ?></a></td>
     <td><?php echo $author['publisher']; ?></td>
     <td>
       <ul>
