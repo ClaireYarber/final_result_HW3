@@ -10,7 +10,7 @@
     </thead>
     <tbody>
 <?php
-while ($book = $chapters->fetch_assoc()) {
+while ($chapter = $chapters->fetch_assoc()) {
 ?>
   <tr>
     <td><?php echo $chapter['chapter_id']; ?></td>
