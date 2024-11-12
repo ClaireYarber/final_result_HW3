@@ -2,9 +2,9 @@
 require_once("util-db.php");
 require_once("model-books.php");
 
-$pageTitle= "Authors";
+$pageTitle= "Books";
 include "view-header.php";
-$authors = selectAuthors();
-include "view-authors.php";
+$books = selectBooks();
+include "view-books.php";
 include "view-footer.php";
 ?>
