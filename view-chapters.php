@@ -23,3 +23,4 @@ while ($chapter = $chapters->fetch_assoc()) {
     </tbody>
   </table>
 </div>
+
