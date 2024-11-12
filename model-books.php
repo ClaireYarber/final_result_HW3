@@ -1,8 +1,8 @@
-<?php
-function selectBooks() {
+function selectBooksByAuthor($author_id) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT book_id, book_name, book_description FROM `book`");
+        $stmt = $conn->prepare("SELECT book_id, book_name, book_description FROM `book` WHERE author_id = ?");
+        $stmt->bind_param("i", $author_id);
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -12,4 +12,3 @@ function selectBooks() {
         throw $e;
     }
 }
-?>
