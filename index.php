@@ -35,7 +35,6 @@ include 'util-db.php';
     <button type="submit">Filter</button>
 </form>
 
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['author_id'])) {
     $author_id = $_POST['author_id'];
     $authorsQuery = "SELECT * FROM authors WHERE id=$author_id";
