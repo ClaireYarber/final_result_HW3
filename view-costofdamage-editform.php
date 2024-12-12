@@ -1,3 +1,4 @@
+<!-- Edit Cost of Damage Form -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editCostOfDamageModal-<?php echo $costofdamages['costofdamage_id']; ?>">
   Edit
 </button>
@@ -21,8 +22,15 @@
             <input type="number" class="form-control" id="cod_cost-<?php echo $costofdamages['costofdamage_id']; ?>" name="cod_cost" value="<?php echo $costofdamages['cod_cost']; ?>" required>
           </div>
           <div class="mb-3">
-            <label for="f1driver_id-<?php echo $costofdamages['costofdamage_id']; ?>" class="form-label">F1 Driver ID</label>
-            <input type="number" class="form-control" id="f1driver_id-<?php echo $costofdamages['costofdamage_id']; ?>" name="f1driver_id" value="<?php echo $costofdamages['f1driver_id']; ?>" required>
+            <label for="f1driver_id-<?php echo $costofdamages['costofdamage_id']; ?>" class="form-label">F1 Driver</label>
+            <select class="form-select" id="f1driver_id-<?php echo $costofdamages['costofdamage_id']; ?>" name="f1driver_id" required>
+              <option value="">Select Driver</option>
+              <?php while ($driver = $drivers->fetch_assoc()) { ?>
+                <option value="<?php echo $driver['driver_id']; ?>" <?php echo ($costofdamages['f1driver_id'] == $driver['driver_id']) ? 'selected' : ''; ?>>
+                  <?php echo $driver['driver_name']; ?>
+                </option>
+              <?php } ?>
+            </select>
           </div>
         </div>
         <div class="modal-footer">
