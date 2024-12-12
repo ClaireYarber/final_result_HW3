@@ -1,7 +1,7 @@
 <?php
 function get_db_connection() {
     $host = '138.197.17.168';
-    $username = 'misclair_finalHW3';
+    $username = 'misclair_final_result_hw3user';
     $password = 'CY41727jms!';
     $dbname = 'misclair_finalhw3';
 
