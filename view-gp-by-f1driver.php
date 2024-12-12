@@ -9,7 +9,6 @@
         <th>Grand Prix Name</th>
         <th>Country</th>
         <th>Date and Time</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -24,16 +23,8 @@
           <td><?php echo $gp['gp_name']; ?></td>
           <td><?php echo $gp['country']; ?></td>
           <td><?php echo $gp['day_time']; ?></td>
-          <!-- Add a form with a button to select the rank_id -->
-          <td>
-            <form action="gp-by-f1driver.php" method="POST">
-              <input type="hidden" name="rank_id" value="<?php echo $gp['rank_id']; ?>">
-              <button type="submit" class="btn btn-primary">Select</button>
-            </form>
-          </td>
         </tr>
       <?php } ?>
     </tbody>
   </table>
 </div>
-
