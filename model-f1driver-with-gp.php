@@ -1,38 +1,42 @@
 <?php
-function selectf1drivers() {
-    $conn = null;
+function insertF1DriverGP($driver_id, $gp_name, $rank_number, $total_points, $country, $day_time) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT f1driver_id, f1driver_name, country FROM `f1driver` ");
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt = $conn->prepare("INSERT INTO `gp` (`f1driver_id`, `gp_name`, `rank_number`, `total_points`, `country`, `day_time`) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("isidss", $driver_id, $gp_name, $rank_number, $total_points, $country, $day_time);
+        $success = $stmt->execute();
         $conn->close();
-        return $result;
+        return $success;
     } catch (Exception $e) {
-        if ($conn) {
-            $conn->close();
-        }
+        $conn->close();
         throw $e;
     }
 }
-?>
 
-<?php
-function selectgpbyf1driver($fid) {
-    $conn = null;
+function updateF1DriverGP($driver_id, $gp_name, $rank_number, $total_points, $country, $day_time, $rank_id) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT r.rank_id, rank_number, total_points, gp_name, country, day_time FROM `rank` r JOIN gp g ON g.rank_id = r.rank_id WHERE g.f1driver_id = ?");
-        $stmt->bind_param("i", $fid);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt = $conn->prepare("UPDATE `gp` SET `f1driver_id` = ?, `gp_name` = ?, `rank_number` = ?, `total_points` = ?, `country` = ?, `day_time` = ? WHERE `rank_id` = ?");
+        $stmt->bind_param("isidssi", $driver_id, $gp_name, $rank_number, $total_points, $country, $day_time, $rank_id);
+        $success = $stmt->execute();
         $conn->close();
-        return $result;
+        return $success;
     } catch (Exception $e) {
-        if ($conn) {
-            $conn->close();
-        }
+        $conn->close();
         throw $e;
     }
 }
-?>
+
+function deleteF1DriverGP($rank_id) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("DELETE FROM `gp` WHERE `rank_id` = ?");
+        $stmt->bind_param("i", $rank_id);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
