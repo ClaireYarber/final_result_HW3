@@ -4,7 +4,7 @@ require_once("model-gp-by-f1driver.php");
 
 $pageTitle = "F1 Grand Prix";
 include "view-header.php";
-$rank = selectgpbyf1driver ($_POST['rid']);
+$rank = selectgpbyf1driver ($_POST['id']);
 include "view-gp-by-f1driver.php";
 include "view-footer.php";
 ?>
