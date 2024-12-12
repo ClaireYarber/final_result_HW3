@@ -179,7 +179,7 @@ function deleteF1DriverGP($rank_id) {
 function selectGPByF1Driver($f1driver_id) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT gp.gp_id, gp.gp_name, gp.country, gp.day_time FROM `gp` WHERE gp.f1driver_id = ?");
+        $stmt = $conn->prepare("SELECT gp.gp_id, gp.gp_name, gp.country, gp.day_time, gp.f1driver_id FROM `gp` WHERE gp.f1driver_id = ?");
         $stmt->bind_param("i", $f1driver_id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -190,4 +190,19 @@ function selectGPByF1Driver($f1driver_id) {
         throw $e;
     }
 }
+
+// function selectGPByF1Driver($f1driver_id) {
+//     try {
+//         $conn = get_db_connection();
+//         $stmt = $conn->prepare("SELECT gp.gp_id, gp.gp_name, gp.country, gp.day_time FROM `gp` WHERE gp.f1driver_id = ?");
+//         $stmt->bind_param("i", $f1driver_id);
+//         $stmt->execute();
+//         $result = $stmt->get_result();
+//         $conn->close();
+//         return $result;
+//     } catch (Exception $e) {
+//         $conn->close();
+//         throw $e;
+//     }
+// }
 ?>
