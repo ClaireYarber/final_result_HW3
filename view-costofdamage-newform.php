@@ -1,3 +1,4 @@
+<!-- Add New Cost of Damage Form -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newCostOfDamageModal">
   Add New Cost of Damage
 </button>
@@ -21,8 +22,13 @@
             <input type="number" class="form-control" id="cod_cost" name="cod_cost" required>
           </div>
           <div class="mb-3">
-            <label for="f1driver_id" class="form-label">F1 Driver ID</label>
-            <input type="number" class="form-control" id="f1driver_id" name="f1driver_id" required>
+            <label for="f1driver_id" class="form-label">F1 Driver</label>
+            <select class="form-select" id="f1driver_id" name="f1driver_id" required>
+              <option value="">Select Driver</option>
+              <?php while ($driver = $drivers->fetch_assoc()) { ?>
+                <option value="<?php echo $driver['driver_id']; ?>"><?php echo $driver['driver_name']; ?></option>
+              <?php } ?>
+            </select>
           </div>
         </div>
         <div class="modal-footer">
