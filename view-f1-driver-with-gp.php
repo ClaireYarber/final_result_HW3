@@ -1,48 +1,47 @@
-<h1>F1 Drivers Grand Prix</h1>
-  
+<h1>F1 Driver Grand Prix</h1>
+<div class="row">
+  <div class="col">
+    <h2>Grand Prix Records</h2>
+  </div>
+  <div class="col-auto">
+    <?php include "view-f1driver-with-gp-newform.php"; ?>
+  </div>
+</div>
 <div class="table-responsive">
   <table class="table">
     <thead>
       <tr>
-        <th>Driver Name</th>
-        <th>Grand Prix Details</th>
+        <th>Rank ID</th>
+        <th>GP Name</th>
+        <th>Rank Number</th>
+        <th>Total Points</th>
+        <th>Country</th>
+        <th>Day/Time</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <?php
-      while ($f1driver = $f1drivers->fetch_assoc()) { 
-      ?>
-       <div class="card-group">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><?php echo htmlspecialchars($f1driver['f1driver_name']); ?></h5>
-              <p class="card-text">
-              <ul class="list-group">
-                <?php 
-                // Fetch grand prix details for the current driver
-                $gps = selectgpbyf1driver($f1driver['f1driver_id']);
-                // Loop through the grand prix results
-                while ($gp = $gps->fetch_assoc()) {
-                ?>
-                  <li class="list-group-item">
-                    <?php echo htmlspecialchars($gp['rank_number']); ?> - 
-                    <?php echo htmlspecialchars($gp['total_points']); ?> - 
-                    <?php echo htmlspecialchars($gp['gp_name']); ?> - 
-                    <?php echo htmlspecialchars($gp['country']); ?> - 
-                    <?php echo htmlspecialchars($gp['day_time']); ?>
-                  </li>
-                <?php
-                }
-                ?>
-              </ul>
-              </p>
-              <p class="card-text"><small class="text-body-secondary">Country Origin: <?php echo htmlspecialchars($f1driver['country']); ?></small></p>
-            </div>
-          </div>
-       </div>
-      <?php
-      } 
-      ?>
+      <?php while ($record = $grandPrixRecords->fetch_assoc()) { ?>
+        <tr>
+          <td><?php echo $record['rank_id']; ?></td>
+          <td><?php echo $record['gp_name']; ?></td>
+          <td><?php echo $record['rank_number']; ?></td>
+          <td><?php echo $record['total_points']; ?></td>
+          <td><?php echo $record['country']; ?></td>
+          <td><?php echo $record['day_time']; ?></td>
+          <td>
+            <?php include "view-f1driver-with-gp-editform.php"; ?>
+          </td>
+          <td>
+            <form method="post" action="">
+              <input type="hidden" name="rank_id" value="<?php echo $record['rank_id']; ?>">
+              <input type="hidden" name="actionType" value="Delete">
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <?php } ?>
     </tbody>
   </table>
 </div>
