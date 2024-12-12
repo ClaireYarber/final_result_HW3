@@ -1,3 +1,4 @@
+
 <h1>F1 Driver Grand Prix</h1>
 <div class="row">
   <div class="col">
@@ -11,10 +12,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Rank ID</th>
         <th>GP Name</th>
-        <th>Rank Number</th>
-        <th>Total Points</th>
+        <th>F1 Driver ID</th>
         <th>Country</th>
         <th>Day/Time</th>
         <th></th>
@@ -24,10 +23,8 @@
     <tbody>
       <?php while ($record = $grandPrixRecords->fetch_assoc()) { ?>
         <tr>
-          <td><?php echo $record['rank_id']; ?></td>
           <td><?php echo $record['gp_name']; ?></td>
-          <td><?php echo $record['rank_number']; ?></td>
-          <td><?php echo $record['total_points']; ?></td>
+          <td><?php echo $record['f1driver_id']; ?></td>
           <td><?php echo $record['country']; ?></td>
           <td><?php echo $record['day_time']; ?></td>
           <td>
