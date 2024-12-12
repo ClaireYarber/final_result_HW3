@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model-f1drivers-with-gp.php");
+require_once("model-f1driver-with-gp.php");
 
 $pageTitle = "F1 Drivers Grand Prix";
 include "view-header.php";
