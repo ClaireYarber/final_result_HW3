@@ -26,7 +26,7 @@
             <select class="form-select" id="f1driver_id" name="f1driver_id" required>
               <option value="">Select Driver</option>
               <?php while ($driver = $drivers->fetch_assoc()) { ?>
-                <option value="<?php echo $driver['driver_id']; ?>"><?php echo $driver['driver_name']; ?></option>
+                <option value="<?php echo $driver['f1driver_id']; ?>"><?php echo $driver['f1driver_name']; ?></option>
               <?php } ?>
             </select>
           </div>
