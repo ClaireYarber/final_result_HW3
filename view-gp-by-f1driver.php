@@ -14,7 +14,7 @@
     <tbody>
       <?php
       // Loop through the result set and display the data
-      while ($gp = $gp->fetch_assoc()) {
+      while ($gp = $rank->fetch_assoc()) {
       ?>
         <tr>
           <td><?php echo $gp['rank_id']; ?></td>
