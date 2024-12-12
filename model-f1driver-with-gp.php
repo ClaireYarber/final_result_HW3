@@ -58,14 +58,13 @@ function deleteF1DriverGP($rank_id) {
 function selectGPByF1Driver($f1driver_id) {
     try {
         $conn = get_db_connection();
-        // Use JOIN to fetch data from both `gp` and `rank` tables
+        // Modify the query to include f1driver_id
         $stmt = $conn->prepare("
-            SELECT gp.gp_name, gp.day_time, gp.country, rank.rank_id, rank.rank_number, rank.total_points
+            SELECT gp.gp_name, gp.day_time, gp.country, gp.f1driver_id, rank.rank_id, rank.rank_number, rank.total_points
             FROM `gp`
             JOIN `rank` ON gp.rank_id = rank.rank_id
             WHERE gp.f1driver_id = ?");
         
-        // Bind the F1 driver ID as an integer
         $stmt->bind_param("i", $f1driver_id);
         $stmt->execute();
         $result = $stmt->get_result();  // Execute and get result
@@ -76,5 +75,4 @@ function selectGPByF1Driver($f1driver_id) {
         throw $e;  // If error occurs, throw the exception
     }
 }
-
 ?>
