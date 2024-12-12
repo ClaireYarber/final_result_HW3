@@ -36,4 +36,10 @@
         </div>
         <div class="modal-footer">
           <input type="hidden" name="actionType" value="Add">
-          <button type
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
