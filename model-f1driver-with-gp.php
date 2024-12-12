@@ -53,19 +53,27 @@ function deleteF1DriverGP($rank_id) {
         throw $e;
     }
 }
+// Updated function to select Grand Prix records by F1 driver ID with JOIN
 function selectGPByF1Driver($f1driver_id) {
     try {
         $conn = get_db_connection();
-        // Prepare SQL query to fetch Grand Prix records for a specific F1 driver
-        $stmt = $conn->prepare("SELECT * FROM `gp` WHERE `f1driver_id` = ?");
-        $stmt->bind_param("i", $f1driver_id);  // Bind the F1 driver ID as an integer
+        // Use JOIN to fetch data from both `gp` and `rank` tables
+        $stmt = $conn->prepare("
+            SELECT gp.gp_name, gp.day_time, gp.country, rank.rank_number, rank.total_points
+            FROM `gp`
+            JOIN `rank` ON gp.rank_id = rank.rank_id
+            WHERE gp.f1driver_id = ?");
+        
+        // Bind the F1 driver ID as an integer
+        $stmt->bind_param("i", $f1driver_id);
         $stmt->execute();
         $result = $stmt->get_result();  // Execute and get result
         $conn->close();
-        return $result;  // Return the result (associated array)
+        return $result;  // Return the result
     } catch (Exception $e) {
         $conn->close();
         throw $e;  // If error occurs, throw the exception
     }
 }
+
 ?>
