@@ -1,8 +1,8 @@
 <?php
-function selectBooks() {
+function selectrank() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT book_id, book_name, book_description FROM `book`");
+        $stmt = $conn->prepare("SELECT rank_id, rank_number, total_points FROM `rank` ");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
