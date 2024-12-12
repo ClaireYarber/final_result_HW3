@@ -20,16 +20,18 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="authors.php">Authors</a>
+          <a class="nav-link" href="f1drivers.php">F1 Drivers</a>
         </li>
-     <li class="nav-item">
-          <a class="nav-link" href="books.php">Books</a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="chapters.php">Chapters</a>
-           </li><li class="nav-item">
-          <a class="nav-link" href="pages.php">Pages</a>
-        </li> 
-      </ul>     
+        <li class="nav-item">
+          <a class="nav-link" href="rank.php">Rank</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="f1driver-with-gp.php">F1 Drivers Grand Prix</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="costofdamage.php">Cost of Damage to Car</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
