@@ -40,7 +40,6 @@
 <?php
 require_once("util-db.php");
 require_once("model-costofdamage.php");
-require_once("model-drivers.php");
 
 $pageTitle = "Cost of Damage to Car";
 include "view-header.php";
