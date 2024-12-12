@@ -33,6 +33,6 @@ if (isset($_POST['actionType'])) {
 
 $f1drivers = selectf1drivers();
 $grandPrixRecords = selectGPByF1Driver($f1drivers->fetch_assoc()['f1driver_id']);
-include "view-f1driver-with-gp.php";
+include "view-f1-driver-with-gp.php";
 include "view-footer.php";
 ?>
