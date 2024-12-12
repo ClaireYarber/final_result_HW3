@@ -18,7 +18,7 @@
           <td><?php echo $f1driver['f1driver_id']; ?></td>
           <td><?php echo $f1driver['f1driver_name']; ?></td>
           <td><?php echo $f1driver['country']; ?></td>
-          <td><a href="gp-by-f1driver.php?id=<?php echo $f1driver['w_tennispro_id']; ?>">Grand Prix</a></td>
+          <td><a href="gp-by-f1driver.php?id=<?php echo $f1driver['f1driver_id']; ?>">Grand Prix</a></td>
         </tr>
       <?php
       } 
