@@ -2,7 +2,7 @@
 function selectAllDrivers() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT driver_id, driver_name FROM drivers");
+        $stmt = $conn->prepare("SELECT f1driver_id, f1driver_name FROM f1driver");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
