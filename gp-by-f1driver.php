@@ -16,20 +16,25 @@ require_once("model-gp-by-f1driver.php");
 $pageTitle = "F1 Grand Prix";
 include "view-header.php";
 
-// Check if 'rid' (rank_id) is set in the URL query parameter
+// Make sure the 'rid' parameter is set
 if (isset($_GET['rid'])) {
     $rid = $_GET['rid'];
-    
-    // Fetch the Grand Prix data for the given Rank ID
+    // Get the rank data by the given rank ID
     $rank = selectgpbyf1driver($rid);
     
-    // Include the view to display the data
-    include "view-gp-by-f1driver.php";
+    // Check if data was returned
+    if ($rank->num_rows > 0) {
+        include "view-gp-by-f1driver.php";
+    } else {
+        echo "No Grand Prix data found for this rank.";
+    }
 } else {
-    // Handle the case when 'rid' is not provided in the URL, show an error message
     echo "Error: Rank ID (rid) is missing.";
 }
 
 include "view-footer.php";
 ?>
+
+
+
 
