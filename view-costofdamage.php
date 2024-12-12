@@ -15,7 +15,7 @@
       while ($costofdamages = $costofdamage->fetch_assoc()) { 
       ?>
         <tr>
-          <td><?php echo $costofdamages['costofdamages_id']; ?></td>
+          <td><?php echo $costofdamages['costofdamage_id']; ?></td>
           <td><?php echo $costofdamages['cod_brand']; ?></td>
           <td><?php echo $costofdamages['cod_cost']; ?></td>
           <td><?php echo $costofdamages['f1driver_id']; ?></td>
