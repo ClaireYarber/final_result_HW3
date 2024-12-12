@@ -1,9 +1,9 @@
 <?php
-function selectBooksByAuthor($iid) {
+function selectgpbyrank($rid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT b.book_id, book_number, book_description, year, month, day FROM `book` b join page p on p.book_id = b.book_id where p.Author_id=?");
-        $stmt->bind_param("a", $aid);
+        $stmt = $conn->prepare("SELECT r.rank_id, rank_number, total_points, gp_name, country, day_time FROM `rank` r join gp g on g.rank_id = r.rank_id where g.rank_id=?");
+        $stmt->bind_param("i", $rid);
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
