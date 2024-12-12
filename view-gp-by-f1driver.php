@@ -6,7 +6,7 @@
         <th>ID</th>
         <th>Number</th>
         <th>Points</th>
-        <th>Grand Prix</th>
+        <th>Grand Prix Name</th>
         <th>Country</th>
         <th>Date and Time</th>
       </tr>
