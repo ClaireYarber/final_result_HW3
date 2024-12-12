@@ -17,11 +17,11 @@
       <div class="modal-body">
         <form method="post" action="">
           <div class="mb-3">
-            <label for="cNumber" class="form-label">author name</label>
+            <label for="cID" class="form-label">author id</label>
             <input type="text" class="form-control" id="cNumber" name="cNumber">
           </div>
           <div class="mb-3">
-            <label for="cDesc" class="form-label">author description</label>
+            <label for="cName" class="form-label">author name</label>
             <input type="text" class="form-control" id="cDesc" name="cDesc">
           </div>
             <input type="hidden" name="actionType" value="Add">
