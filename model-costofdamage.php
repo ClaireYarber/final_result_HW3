@@ -1,8 +1,8 @@
 <?php
-function selectPages() {
+function selectcostofdamage() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT page_id, author_id, book_id, year, month, day FROM `page`");
+        $stmt = $conn->prepare("SELECT costofdamage_id, cod_brand, cod_cost, f1driver_id FROM `costofdamage` ");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -13,4 +13,3 @@ function selectPages() {
     }
 }
 ?>
-
