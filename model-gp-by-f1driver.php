@@ -62,7 +62,7 @@ function selectGPByF1Driver($f1driver_id) {
         $conn = get_db_connection();
         // Use JOIN to fetch data from both `gp` and `rank` tables
         $stmt = $conn->prepare("
-            SELECT gp.gp_name, gp.day_time, gp.country, rank.rank_number, rank.total_points
+            SELECT gp.gp_name, gp.day_time, gp.country, rank.rank_id, rank.rank_number, rank.total_points
             FROM `gp`
             JOIN `rank` ON gp.rank_id = rank.rank_id
             WHERE gp.f1driver_id = ?");
@@ -78,6 +78,7 @@ function selectGPByF1Driver($f1driver_id) {
         throw $e;  // If error occurs, throw the exception
     }
 }
+
 
 ?>
 
