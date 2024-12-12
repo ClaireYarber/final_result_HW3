@@ -4,7 +4,7 @@ function selectgpbyf1driver($rid) {
         $conn = get_db_connection();
         // SQL query to get the Grand Prix details based on the Rank ID (rid)
         $stmt = $conn->prepare("SELECT r.rank_id, rank_number, total_points, gp_name, country, day_time 
-                                FROM `rank` r 
+                                FROM rank r 
                                 JOIN gp g ON g.rank_id = r.rank_id 
                                 WHERE r.rank_id = ?");
         $stmt->bind_param("i", $rid); // Bind the Rank ID to the query
@@ -18,4 +18,3 @@ function selectgpbyf1driver($rid) {
     }
 }
 ?>
-
