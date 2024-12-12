@@ -53,3 +53,19 @@ function deleteF1DriverGP($rank_id) {
         throw $e;
     }
 }
+function selectGPByF1Driver($f1driver_id) {
+    try {
+        $conn = get_db_connection();
+        // Prepare SQL query to fetch Grand Prix records for a specific F1 driver
+        $stmt = $conn->prepare("SELECT * FROM `gp` WHERE `f1driver_id` = ?");
+        $stmt->bind_param("i", $f1driver_id);  // Bind the F1 driver ID as an integer
+        $stmt->execute();
+        $result = $stmt->get_result();  // Execute and get result
+        $conn->close();
+        return $result;  // Return the result (associated array)
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;  // If error occurs, throw the exception
+    }
+}
+?>
