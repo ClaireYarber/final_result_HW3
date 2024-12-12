@@ -1,4 +1,3 @@
-
 <h1>F1 Driver Grand Prix</h1>
 <div class="row">
   <div class="col">
