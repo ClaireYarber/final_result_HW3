@@ -39,7 +39,7 @@
             </form>
           </td>
         </tr>
-        <?php include "view-rank-editform.php"; ?>
+        <?php include "view/rank-editform.php"; ?>
       <?php } ?>
     </tbody>
   </table>
