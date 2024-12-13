@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Driver Grand Prix</title>
+  <style>
+    /* Set the background image for the page */
+    body {
+      background-image: url('https://t3.ftcdn.net/jpg/08/69/38/52/360_F_869385263_KaJukEv4E2qm9vxw27G6uq1aXQcJad9k.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white; /* Make text white */
+    }
+
+    h1, h2 {
+      color: white; /* Ensure header text is white */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Add shadow for better visibility */
+    }
+
+    /* Style for the table */
+    .table {
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for contrast */
+      color: white; /* Make table text white */
+    }
+
+    /* Optional: Add some style for table headers */
+    .table th {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Optional: Add style to buttons */
+    .btn-danger {
+      color: white;
+      background-color: #dc3545; /* Red */
+    }
+  </style>
+</head>
+<body>
+
 <h1>F1 Driver Grand Prix</h1>
 <div class="row">
   <div class="col">
@@ -7,6 +47,7 @@
     <?php include "view/f1driver-with-gp-newform.php"; ?>
   </div>
 </div>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -41,3 +82,6 @@
     </tbody>
   </table>
 </div>
+
+</body>
+</html>
