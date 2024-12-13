@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model-rank.php");
+require_once("model/rank.php");
 
 $pageTitle = "Rank";
 include "view-header.php";
