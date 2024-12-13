@@ -3,7 +3,7 @@ require_once("util-db.php");
 require_once("model/f1drivers.php");
 
 $pageTitle = "F1 Drivers";
-include "view-header.php";
+include "view/header.php";
 
 if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
