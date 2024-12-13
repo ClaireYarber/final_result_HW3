@@ -48,6 +48,7 @@
     canvas {
       max-width: 100%;
       height: auto;
+      background-color: white; /* White background for the chart */
     }
   </style>
 </head>
@@ -120,15 +121,24 @@
       datasets: [{
         label: 'Total Points',
         data: driverPoints,  // Driver points
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.8)',  // Less transparent bars
+        borderColor: 'rgba(54, 162, 235, 1)',  // Solid border color
         borderWidth: 1
       }]
     },
     options: {
+      responsive: true,
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            color: 'black',  // Make the Y-axis ticks black for better contrast
+          }
+        },
+        x: {
+          ticks: {
+            color: 'black',  // Make the X-axis ticks black for better contrast
+          }
         }
       }
     }
