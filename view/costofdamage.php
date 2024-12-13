@@ -4,7 +4,7 @@
     <h2>Cost of Damage</h2>
   </div>
   <div class="col-auto">
-    <?php include "view-costofdamage-newform.php"; ?>
+    <?php include "view/costofdamage-newform.php"; ?>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
           <td class="cod_cost"><?php echo $costofdamages['cod_cost']; ?></td>
           <td><?php echo $costofdamages['f1driver_id']; ?></td>
           <td>
-            <?php include "view-costofdamage-editform.php"; ?>
+            <?php include "view/costofdamage-editform.php"; ?>
           </td>
           <td>
             <form method="post" action="">
