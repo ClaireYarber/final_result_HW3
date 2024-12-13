@@ -4,7 +4,7 @@
     <h2>F1 Drivers</h2>
   </div>
   <div class="col-auto">
-    <?php include "view-f1drivers-newform.php"; ?>
+    <?php include "view/f1drivers-newform.php"; ?>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
           <td><?php echo $f1driver['f1driver_name']; ?></td>
           <td><?php echo $f1driver['country']; ?></td>
           <td>
-            <?php include "view-f1drivers-editform.php"; ?>
+            <?php include "view/f1drivers-editform.php"; ?>
           </td>
           <td>
             <form method="post" action="">
