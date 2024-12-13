@@ -1,3 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Driver Ranks</title>
+  <style>
+    /* Set the background image for the page */
+    body {
+      background-image: url('https://t3.ftcdn.net/jpg/08/69/38/52/360_F_869385263_KaJukEv4E2qm9vxw27G6uq1aXQcJad9k.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white; /* Make text white */
+    }
+
+    h1 {
+      color: white; /* Ensure header text is white */
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Add shadow for better visibility */
+    }
+
+    /* Style for the table */
+    .table {
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for contrast */
+      color: white; /* Make table text white */
+    }
+
+    /* Optional: Add some style for table headers */
+    .table th {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Optional: Add style to buttons */
+    .btn-primary, .btn-warning, .btn-danger {
+      color: white;
+      background-color: #007bff; /* Blue */
+    }
+
+    .btn-warning {
+      background-color: #ffc107; /* Yellow */
+    }
+
+    .btn-danger {
+      background-color: #dc3545; /* Red */
+    }
+
+    /* Style for the Chart */
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
 <h1>F1 Driver Ranks</h1>
 
 <!-- Table for Ranks -->
@@ -79,3 +134,6 @@
     }
   });
 </script>
+
+</body>
+</html>
