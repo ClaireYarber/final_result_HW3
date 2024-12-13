@@ -3,7 +3,7 @@ require_once("util-db.php");
 require_once("model/costofdamage.php");
 
 $pageTitle = "Cost of Damage to Car";
-include "view-header.php";
+include "view/header.php";
 
 // Handle form submissions for Add, Edit, and Delete actions
 if (isset($_POST['actionType'])) {
