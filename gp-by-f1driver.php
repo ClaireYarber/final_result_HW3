@@ -21,7 +21,7 @@ if (isset($_GET['rid'])) {
     echo "Error: Rank ID (rid) is missing.";
 }
 
-include "view-footer.php";
+include "view/footer.php";
 ?>
 
 
