@@ -10,14 +10,17 @@ include "view/header.php"; // This can include opening HTML tags, and the head s
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $pageTitle; ?></title>
   <style>
-    /* Set the background image */
+    /* Add your CSS here */
     body {
       background-image: url('https://t3.ftcdn.net/jpg/08/69/38/52/360_F_869385263_KaJukEv4E2qm9vxw27G6uq1aXQcJad9k.jpg');
-      background-size: cover; /* Makes sure the image covers the entire screen */
-      background-position: center center; /* Centers the image */
-      background-attachment: fixed; /* Keeps the image fixed when scrolling */
-      margin: 0; /* Removes any default margin */
-      padding: 0; /* Removes any default padding */
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      color: white; /* This makes the text color white */
+      font-size: 3rem; /* Optional: Adjust the size of the text */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Adds shadow for better visibility */
     }
 
     .carousel-container {
@@ -39,7 +42,9 @@ include "view/header.php"; // This can include opening HTML tags, and the head s
 </head>
 <body>
 
-<h1>Home</h1>
+<h1>Welcome To My Final</h1>
+<h2>All About F1 Drivers</h2>
+
 
 <!-- Carousel Section -->
 <div class="carousel-container">
