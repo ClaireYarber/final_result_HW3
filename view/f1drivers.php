@@ -68,6 +68,20 @@
       margin-left: auto;
     }
 
+    /* Make DataTable text white */
+    .dataTables_info, .dataTables_length, .dataTables_filter {
+      color: white !important;
+    }
+
+    .dataTables_wrapper {
+      color: white !important;
+    }
+
+    .dataTables_wrapper input {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: black;
+    }
+
   </style>
 
 </head>
@@ -77,6 +91,7 @@
 
   <div class="row">
     <div class="col">
+      <h2>F1 Drivers</h2>
     </div>
     <div class="col-auto">
       <?php include "view/f1drivers-newform.php"; ?>
