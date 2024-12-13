@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model-f1drivers.php");
+require_once("model/f1drivers.php");
 
 $pageTitle = "F1 Drivers";
 include "view-header.php";
