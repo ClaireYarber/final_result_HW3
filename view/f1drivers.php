@@ -91,7 +91,6 @@
 
   <div class="row">
     <div class="col">
-      <h2>F1 Drivers</h2>
     </div>
     <div class="col-auto">
       <?php include "view/f1drivers-newform.php"; ?>
