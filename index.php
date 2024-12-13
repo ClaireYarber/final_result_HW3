@@ -16,7 +16,7 @@ include "view-header.php";
 <!-- Carousel Section -->
 <div class="carousel-container">
   <div class="carousel">
-    <div><img src="image1.jpg" alt="F1 Driver 1"></div>
+    <div><img src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2024-02/240102-lewis-hamilton-mb-1209-65adb6.jpg" alt="F1 Driver 1"></div>
     <div><img src="image2.jpg" alt="F1 Driver 2"></div>
     <div><img src="image3.jpg" alt="F1 Driver 3"></div>
     <div><img src="image4.jpg" alt="F1 Driver 4"></div>
