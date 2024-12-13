@@ -1,3 +1,21 @@
+ <?php
+      // Loop through the result set and display the data
+      while ($gp = $rank->fetch_assoc()) {
+      ?>
+        <tr>
+          <td><?php echo $gp['rank_id']; ?></td> <!-- Display rank_id -->
+          <td><?php echo $gp['rank_number']; ?></td>
+          <td><?php echo $gp['total_points']; ?></td>
+          <td><?php echo $gp['gp_name']; ?></td>
+          <td><?php echo $gp['country']; ?></td>
+          <td><?php echo $gp['day_time']; ?></td>
+        </tr>
+      <?php } 
+    ?>
+    </tbody>
+  </table>
+</div>
+
 <h1>Rank by Grand Prix</h1>
 <div class="table-responsive">
   <table class="table">
