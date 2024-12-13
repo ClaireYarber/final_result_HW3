@@ -32,6 +32,6 @@ if (isset($_POST['actionType'])) {
 }
 
 $f1drivers = selectF1Drivers();
-include "view-f1drivers.php";
-include "view-footer.php";
+include "view/f1drivers.php";
+include "view/footer.php";
 ?>
