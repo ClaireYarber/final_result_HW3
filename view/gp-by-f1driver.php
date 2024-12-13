@@ -24,7 +24,8 @@
           <td><?php echo $gp['country']; ?></td>
           <td><?php echo $gp['day_time']; ?></td>
         </tr>
-      <?php } ?>
+      <?php } 
+    ?>
     </tbody>
   </table>
 </div>
