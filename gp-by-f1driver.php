@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model-gp-by-f1driver.php");
+require_once("model/gp-by-f1driver.php");
 
 $pageTitle = "F1 Grand Prix";
 include "view/header.php";
@@ -13,7 +13,7 @@ if (isset($_GET['rid'])) {
     
     // Check if data was returned
     if ($rank->num_rows > 0) {
-        include "view-gp-by-f1driver.php";
+        include "view/gp-by-f1driver.php";
     } else {
         echo "No Grand Prix data found for this rank.";
     }
