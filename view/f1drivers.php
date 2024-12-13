@@ -77,20 +77,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>F1 Drivers</title>
   
-  <!-- Google Font for stylish text -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     body {
-      font-family: 'Poppins', sans-serif; /* Applying the Poppins font */
-      background-image: url('https://t3.ftcdn.net/jpg/08/69/38/52/360_F_869385263_KaJukEv4E2qm9vxw27G6uq1aXQcJad9k.jpg'); /* Background image */
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://t3.ftcdn.net/jpg/08/69/38/52/360_F_869385263_KaJukEv4E2qm9vxw27G6uq1aXQcJad9k.jpg');
       background-size: cover;
       background-position: center;
-      color: #fff; /* White text color for better contrast */
+      color: #fff;
       margin: 0;
       padding: 0;
     }
-    
+
     h1, h2 {
       text-align: center;
       font-weight: 600;
@@ -99,7 +97,7 @@
     .table-responsive {
       margin: 20px auto;
       width: 90%;
-      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+      background-color: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
       padding: 20px;
     }
@@ -131,7 +129,7 @@
     .btn:hover {
       background-color: #0056b3;
     }
-    
+
     .row {
       display: flex;
       justify-content: space-between;
@@ -159,7 +157,6 @@
   </div>
 
   <div class="table-responsive">
-    <!-- Table for F1 drivers -->
     <table id="f1driversTable" class="table">
       <thead>
         <tr>
@@ -204,19 +201,17 @@
     </table>
   </div>
 
-  <!-- Include DataTables CSS and JS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
   <script>
     $(document).ready(function() {
-      // Initialize DataTable
       $('#f1driversTable').DataTable({
-        "paging": true,    // Enable pagination
-        "searching": true, // Enable search bar
-        "ordering": true,  // Enable column sorting
-        "info": true       // Display information about the table (e.g., "Showing 1 to 10 of 50 entries")
+        "paging": true,
+        "searching": true,
+        "ordering": true,
+        "info": true
       });
     });
   </script>
