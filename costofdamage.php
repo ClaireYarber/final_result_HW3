@@ -34,7 +34,7 @@ if (isset($_POST['actionType'])) {
 
 $costofdamage = selectCostOfDamage();
 $drivers = selectAllDrivers(); // Fetch all drivers
-include "view-costofdamage.php";
-include "view-footer.php";
+include "view/costofdamage.php";
+include "view/footer.php";
 ?>
 
