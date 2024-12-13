@@ -30,7 +30,7 @@ include "view-header.php"; // This can include opening HTML tags, and the head s
 </head>
 <body>
 
-<h1>Homework 3</h1>
+<h1>Home</h1>
 
 <!-- Carousel Section -->
 <div class="carousel-container">
