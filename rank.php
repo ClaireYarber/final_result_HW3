@@ -3,7 +3,7 @@ require_once("util-db.php");
 require_once("model/rank.php");
 
 $pageTitle = "Rank";
-include "view-header.php";
+include "view/header.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $actionType = $_POST['actionType'];
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $rank = selectRank();
-include "view-rank.php";
-include "view-rank-newform.php";
-include "view-footer.php";
+include "view/rank.php";
+include "view/rank-newform.php";
+include "view/footer.php";
 ?>
