@@ -9,7 +9,7 @@ include "view/header.php";
 if (isset($_GET['rid'])) {
     $rid = $_GET['rid'];
     // Get the rank data by the given rank ID
-    $rank = selectgpbyf1driver($rid);
+    $rank = selectGPByF1Driver($rid);
     
     // Check if data was returned
     if ($rank->num_rows > 0) {
