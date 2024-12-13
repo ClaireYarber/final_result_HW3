@@ -1,7 +1,6 @@
 <h1>Cost of Damage to Car</h1>
 <div class="row">
   <div class="col">
-    <h2>Cost of Damage</h2>
   </div>
   <div class="col-auto">
     <?php include "view/costofdamage-newform.php"; ?>
