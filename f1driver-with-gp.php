@@ -3,7 +3,7 @@ require_once("util-db.php");
 require_once("model/f1driver-with-gp.php");
 
 $pageTitle = "F1 Driver Grand Prix";
-include "view-header.php";
+include "view/header.php";
 
 if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
