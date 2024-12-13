@@ -8,11 +8,9 @@
   </div>
 </div>
 
-<!-- Map Container -->
-<div id="map" style="height: 400px;"></div>
-
 <div class="table-responsive">
-  <table class="table">
+  <!-- Table for F1 drivers -->
+  <table id="f1driversTable" class="table">
     <thead>
       <tr>
         <th>ID</th>
@@ -56,36 +54,19 @@
   </table>
 </div>
 
-<!-- Include Leaflet.js -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<!-- Include DataTables CSS and JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <script>
   $(document).ready(function() {
-    // Initialize the map
-    var map = L.map('map').setView([51.505, -0.09], 2);  // Default to zoomed out, centered around London
-
-    // Add a tile layer to the map (using OpenStreetMap tiles)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // Example data: F1 Driver locations (latitude, longitude)
-    var driverLocations = [
-      <?php while ($f1driver = $f1drivers->fetch_assoc()) { ?>
-        {
-          "name": "<?php echo $f1driver['f1driver_name']; ?>",
-          "lat": <?php echo $f1driver['latitude']; ?>,  // Replace with actual latitude column
-          "lon": <?php echo $f1driver['longitude']; ?>,  // Replace with actual longitude column
-          "country": "<?php echo $f1driver['country']; ?>"
-        },
-      <?php } ?>
-    ];
-
-    // Add markers for each F1 driver location
-    driverLocations.forEach(function(driver) {
-      var marker = L.marker([driver.lat, driver.lon]).addTo(map);
-      marker.bindPopup("<b>" + driver.name + "</b><br>" + driver.country);
+    // Initialize DataTable
+    $('#f1driversTable').DataTable({
+      "paging": true,    // Enable pagination
+      "searching": true, // Enable search bar
+      "ordering": true,  // Enable column sorting
+      "info": true       // Display information about the table (e.g., "Showing 1 to 10 of 50 entries")
     });
   });
 </script>
