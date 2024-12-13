@@ -42,8 +42,7 @@ include "view/header.php"; // This can include opening HTML tags, and the head s
 </head>
 <body>
 
-<h1>Welcome To My Final</h1>
-<h2>All About F1 Drivers</h2>
+<h1>All About Formula 1</h1>
 
 
 <!-- Carousel Section -->
