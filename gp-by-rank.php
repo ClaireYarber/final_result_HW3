@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model-gp-by-rank.php");
+require_once("model/gp-by-rank.php");
 
 $pageTitle = "Grand Prix by Rank";
 include "view-header.php";
