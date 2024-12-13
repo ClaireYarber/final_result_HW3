@@ -4,7 +4,7 @@
     <h2>Grand Prix Records</h2>
   </div>
   <div class="col-auto">
-    <?php include "view-f1driver-with-gp-newform.php"; ?>
+    <?php include "view/f1driver-with-gp-newform.php"; ?>
   </div>
 </div>
 <div class="table-responsive">
@@ -27,7 +27,7 @@
           <td><?php echo $record['country']; ?></td>
           <td><?php echo $record['day_time']; ?></td>
           <td>
-            <?php include "view-f1driver-with-gp-editform.php"; ?>
+            <?php include "view/f1driver-with-gp-editform.php"; ?>
           </td>
           <td>
             <form method="post" action="">
