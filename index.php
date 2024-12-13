@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Home";
-include "view-header.php"; // This can include opening HTML tags, and the head section
+include "view/header.php"; // This can include opening HTML tags, and the head section
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ include "view-header.php"; // This can include opening HTML tags, and the head s
 </div>
 
 <?php
-include "view-footer.php";
+include "view/footer.php";
 ?>
 
 </body>
