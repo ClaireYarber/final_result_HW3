@@ -159,3 +159,8 @@
 
 </body>
 </html>
+<!-- Hyperlink to the homepage -->
+<a href="index.php" class="home-link">Go to Homepage</a>
+
+</body>
+</html>
