@@ -56,29 +56,34 @@
         <th>F1 Driver ID</th>
         <th>Country</th>
         <th>Day/Time</th>
-        <th></th>
-        <th></th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <?php while ($record = $grandPrixRecords->fetch_assoc()) { ?>
-        <tr>
-          <td><?php echo $record['gp_name']; ?></td>
-          <td><?php echo $record['f1driver_id']; ?></td>
-          <td><?php echo $record['country']; ?></td>
-          <td><?php echo $record['day_time']; ?></td>
-          <td>
-            <?php include "view/f1driver-with-gp-editform.php"; ?>
-          </td>
-          <td>
-            <form method="post" action="">
-              <input type="hidden" name="rank_id" value="<?php echo $record['rank_id']; ?>">
-              <input type="hidden" name="actionType" value="Delete">
-              <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
-            </form>
-          </td>
-        </tr>
-      <?php } ?>
+      <?php
+      // Fetch all F1 drivers
+      $f1drivers = selectF1Drivers();
+      while ($driver = $f1drivers->fetch_assoc()) {
+          // Fetch Grand Prix records for each driver
+          $grandPrixRecords = selectGPByF1Driver($driver['f1driver_id']);
+          while ($record = $grandPrixRecords->fetch_assoc()) {
+              // Display GP record for the driver
+              echo "<tr>
+                      <td>{$record['gp_name']}</td>
+                      <td>{$record['f1driver_id']}</td>
+                      <td>{$record['country']}</td>
+                      <td>{$record['day_time']}</td>
+                      <td>
+                        <form method='post' action=''>
+                          <input type='hidden' name='rank_id' value='{$record['rank_id']}'>
+                          <input type='hidden' name='actionType' value='Delete'>
+                          <button type='submit' class='btn btn-danger' onclick='return confirm(\"Are you sure?\");'>Delete</button>
+                        </form>
+                      </td>
+                    </tr>";
+          }
+      }
+      ?>
     </tbody>
   </table>
 </div>
