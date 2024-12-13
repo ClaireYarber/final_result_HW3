@@ -3,7 +3,7 @@ require_once("util-db.php");
 require_once("model/gp-by-f1driver.php");
 
 $pageTitle = "F1 Grand Prix";
-include "view-header.php";
+include "view/header.php";
 
 // Make sure the 'rid' parameter is set
 if (isset($_GET['rid'])) {
