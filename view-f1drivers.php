@@ -7,6 +7,10 @@
     <?php include "view-f1drivers-newform.php"; ?>
   </div>
 </div>
+
+<!-- Map Container -->
+<div id="map" style="height: 400px;"></div>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -51,3 +55,37 @@
     </tbody>
   </table>
 </div>
+
+<!-- Include Leaflet.js -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Initialize the map
+    var map = L.map('map').setView([51.505, -0.09], 2);  // Default to zoomed out, centered around London
+
+    // Add a tile layer to the map (using OpenStreetMap tiles)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Example data: F1 Driver locations (latitude, longitude)
+    var driverLocations = [
+      <?php while ($f1driver = $f1drivers->fetch_assoc()) { ?>
+        {
+          "name": "<?php echo $f1driver['f1driver_name']; ?>",
+          "lat": <?php echo $f1driver['latitude']; ?>,  // Replace with actual latitude column
+          "lon": <?php echo $f1driver['longitude']; ?>,  // Replace with actual longitude column
+          "country": "<?php echo $f1driver['country']; ?>"
+        },
+      <?php } ?>
+    ];
+
+    // Add markers for each F1 driver location
+    driverLocations.forEach(function(driver) {
+      var marker = L.marker([driver.lat, driver.lon]).addTo(map);
+      marker.bindPopup("<b>" + driver.name + "</b><br>" + driver.country);
+    });
+  });
+</script>
