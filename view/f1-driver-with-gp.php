@@ -34,6 +34,16 @@
       color: white;
       background-color: #dc3545; /* Red */
     }
+
+    /* Style for the hyperlink */
+    .home-link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #00f; /* Blue text for the link */
+      font-size: 1.2em;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -87,6 +97,9 @@
     </tbody>
   </table>
 </div>
+
+<!-- Hyperlink to the homepage -->
+<a href="index.php" class="home-link">Go to Homepage</a>
 
 </body>
 </html>
